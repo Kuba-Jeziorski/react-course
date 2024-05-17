@@ -42,7 +42,11 @@ function Tabbed({ content }) {
       </div>
 
       {activeTab <= 2 ? (
-        <TabContent item={content.at(activeTab)} />
+        // reseting the state
+        <TabContent
+          item={content.at(activeTab)}
+          key={content.at(activeTab).summary}
+        />
       ) : (
         <DifferentContent />
       )}
@@ -101,5 +105,3 @@ function DifferentContent() {
     </div>
   );
 }
-
-console.log(`/node_modules test`);
