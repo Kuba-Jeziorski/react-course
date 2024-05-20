@@ -16,6 +16,18 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lightgreen;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: lightblue;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -139,6 +151,8 @@ body {
   list-style: none;
   padding: 0.8rem 0;
   /* overflow: scroll; */
+  overflow-y: scroll;
+  max-height: 330px;
 }
 
 .list-watched {
