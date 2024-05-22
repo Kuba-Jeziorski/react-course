@@ -153,7 +153,8 @@ body {
   /* overflow: scroll; */
   /* overflow-y: scroll; */
   overflow-y: auto;
-  max-height: 330px;
+  /* max-height: 330px; */
+  height: calc(100vh - 7.2rem - 4 * 2.4rem);
 }
 
 .list-watched {
