@@ -1,7 +1,7 @@
-import { formatCurrency } from "../../utils/helpers"
+import { formatCurrency } from '../../utils/helpers';
 
 function OrderItem({ item, isLoadingIngredients, ingredients }) {
-  const { quantity, name, totalPrice } = item
+  const { quantity, name, totalPrice } = item;
 
   return (
     <li className="py-3">
@@ -12,7 +12,7 @@ function OrderItem({ item, isLoadingIngredients, ingredients }) {
         <p className="font-bold">{formatCurrency(totalPrice)}</p>
       </div>
     </li>
-  )
+  );
 }
 
-export default OrderItem
+export default OrderItem;
