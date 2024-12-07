@@ -42,7 +42,7 @@ function MenuItem({ pizza }) {
             <p className="text-sm font-medium uppercase text-stone-500">
               Sold out
             </p>
-          )}
+          )}s
           {isInCart && (
             <div className="flex items-center gap-3 sm:gap-8">
               <UpdateItemQuantity

@@ -1,17 +1,17 @@
 // Test ID: IIDSAT
 
-import OrderItem from './OrderItem';
+import OrderItem from "./OrderItem"
 
-import { useLoaderData } from 'react-router-dom';
-import { getOrder } from '../../services/apiRestaurant';
+import { useLoaderData } from "react-router-dom"
+import { getOrder } from "../../services/apiRestaurant"
 import {
   calcMinutesLeft,
   formatCurrency,
   formatDate,
-} from '../../utils/helpers';
+} from "../../utils/helpers"
 
 function Order() {
-  const order = useLoaderData();
+  const order = useLoaderData()
 
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
@@ -22,9 +22,9 @@ function Order() {
     orderPrice,
     estimatedDelivery,
     cart,
-  } = order;
+  } = order
 
-  const deliveryIn = calcMinutesLeft(estimatedDelivery);
+  const deliveryIn = calcMinutesLeft(estimatedDelivery)
 
   return (
     <div className="space-y-8 px-4 py-6">
@@ -47,7 +47,7 @@ function Order() {
         <p className="font-medium">
           {deliveryIn >= 0
             ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
-            : 'Order should have arrived'}
+            : "Order should have arrived"}
         </p>
         <p className="text-xs text-stone-500">
           (Estimated delivery: {formatDate(estimatedDelivery)})
@@ -56,7 +56,7 @@ function Order() {
 
       <ul className="dive-stone-200 divide-y border-b border-t">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.id} />
+          <OrderItem item={item} key={item.pizzaId} />
         ))}
       </ul>
 
@@ -74,12 +74,12 @@ function Order() {
         </p>
       </div>
     </div>
-  );
+  )
 }
 
 export async function loader({ params }) {
-  const order = await getOrder(params.orderId);
-  return order;
+  const order = await getOrder(params.orderId)
+  return order
 }
 
-export default Order;
+export default Order
